@@ -1,0 +1,25 @@
+double Degconv (double val)
+{
+return (int)(val / 100) + (val - (int) (val /
+100) * 100) / 60.0;}
+//------------------------------------------------------------------------------------------
+double deg2rad(float deg)
+{
+
+    return deg * (PI/180);
+}
+//this is Harvinson's formula
+double CalcDist(double lat1,double lon1,double lat2,double lon2)
+{
+        int R = 6371;// Radius of the earth in km
+        double dLat = deg2rad(lat2-lat1);// degree to radian
+        double dLon = deg2rad(lon2-lon1);// degree to radian
+        double a =
+        sin(dLat/2) * sin(dLat/2) +
+        cos(deg2rad(lat1)) * cos(deg2rad(lat2)) *
+        sin(dLon/2) * sin(dLon/2);
+        double c = 2 * atan2(sqrt(a), sqrt(1-a));
+        double d = R*c*1000;//Distance in m
+        return d;
+}
+//--------------------------------------------------------------------------------------
