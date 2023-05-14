@@ -10,7 +10,7 @@ void led_output(double x){
         GPIO_PORTF_DATA_R=0x0A; //LED will be turned on(yellow) when the target destination is far away by distance < 8 meters and >4
     }
     else{
-            GPIO_PORTF_DATA_R=0x08; //The built-in LED will be turned on(yellow) when the target destination is about to be reached < 4 meters.
+            GPIO_PORTF_DATA_R=0x08; //The built-in LED will be turned on(green) when the target destination is about to be reached < 4 meters.
     }
 }
 
